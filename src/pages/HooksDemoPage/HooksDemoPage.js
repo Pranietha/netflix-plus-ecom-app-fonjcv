@@ -11,6 +11,7 @@ const HooksDemoPage = () => {
       <HelmetProvider>
         <title>Netflix App | Hooks Demo</title>
       </HelmetProvider>
+      
       <h1>React Hooks Demo</h1>
       <h2>MyAccount | useState Hook Demo </h2>
       <MyAccount />

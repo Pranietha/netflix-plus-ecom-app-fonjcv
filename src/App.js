@@ -10,7 +10,7 @@ import Footer from './components/Footer/Footer';
 import { PageContext } from './contexts/PageContext';
 import { CartContext } from './contexts/CartContext';
 import { useReducer } from 'react';
-import { cartReducer } from './reducers/cartReducer';
+import cartReducer from './reducers/cartReducer';
 import AppRoutes from './routes/AppRoutes'
 
 //give space
