@@ -10,6 +10,8 @@ const TodosVariant2 = () => {
   //dispatcher fn must be called with an action obj to get state data from the reducer
 
   useEffect(() => {
+    //will be excecuted after initial rendering
+    //ideal place for your REST API call
     console.log('After initial rendering');
     todoDispatch({
       type: 'LIST_TODOS',
@@ -48,7 +50,12 @@ const TodosVariant2 = () => {
         <div className="col-md-4">
           <div className="card">
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">first todo</li>
+              {
+                todoList?.map((todo)=>{
+                  return <li key={todo.id} className="list-group-item">{todo.title}</li>
+                })
+              }
+              
             </ul>
           </div>
         </div>
