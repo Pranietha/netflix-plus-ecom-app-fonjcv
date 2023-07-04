@@ -7,8 +7,8 @@ import HooksDemoPage from '../././pages/HooksDemoPage/HooksDemoPage';
 import ShopPage from '../././pages/ShopPage/ShopPage';
 import HocDemoPage from '../././pages/HocDemoPage/HocDemoPage';
 import UnitTestingDemo from '../././pages/UnitTestingDemo/UnitTestingDemo';
+import PageNotFound from './PageNotFound';
 
-import React from 'react';
 
 const AppRoutes = () => {
   return (
@@ -20,6 +20,7 @@ const AppRoutes = () => {
       <Route path="/hooks-demo" element={<HooksDemoPage />} />
       <Route path="/shop-page" element={<ShopPage />} />
       <Route path="/unit-testing-demo" element={<UnitTestingDemo />} />
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 };

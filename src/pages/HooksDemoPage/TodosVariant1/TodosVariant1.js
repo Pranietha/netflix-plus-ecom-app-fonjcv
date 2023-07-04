@@ -27,6 +27,10 @@ const TodosVariant1 = () => {
     ]);
   };
 
+  const handleDeleteTodo = ({id}) => {
+    setTodoList(todoList.filter((todo)=>todo.id !== id))
+  }
+
   return (
     <div style={{ backgroundColor: '#ddd', padding: '20px' }}>
       <h3>Todos App with useState and useRef</h3>
@@ -48,8 +52,18 @@ const TodosVariant1 = () => {
             <ul className="list-group list-group-flush">
               {todoList.map((todo) => {
                 return (
-                  <li className="list-group-item" key={todo.id}>
+                  <li className="list-group-item row" key={todo.id}>
                     {todo.title}
+                    <button
+                      type="button"
+                      className="btn btn-secondary col-3 ms-2"
+                      onClick={()=>handleEditTodo(todo)}
+                    >
+                      Edit
+                    </button>
+                    <button type="button" className="btn btn-danger col-3 ms-2" onClick={()=> handleDeleteTodo(todo)}>
+                      Delete
+                    </button>
                   </li>
                 );
               })}

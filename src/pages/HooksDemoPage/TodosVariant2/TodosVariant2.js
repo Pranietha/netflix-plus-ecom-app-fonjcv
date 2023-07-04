@@ -31,6 +31,10 @@ const TodosVariant2 = () => {
     });
   };
 
+  const handleDeleteTodo = ({ id }) => {
+    todoDispatch(todoList.filter((todo) => todo.id !== id));
+  };
+
   return (
     <div style={{ backgroundColor: '#D8BFD8', padding: '20px' }}>
       <h3>Todos App with useReducer and useRef</h3>
@@ -50,12 +54,26 @@ const TodosVariant2 = () => {
         <div className="col-md-4">
           <div className="card">
             <ul className="list-group list-group-flush">
-              {
-                todoList?.map((todo)=>{
-                  return <li key={todo.id} className="list-group-item">{todo.title}</li>
-                })
-              }
-              
+              {todoList?.map((todo) => {
+                return (
+                  <li key={todo.id} className="list-group-item">
+                    {todo.title}
+                    <button
+                      type="button"
+                      className="btn btn-secondary col-3 ms-2"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-danger col-3 ms-2"
+                      onClick={() => handleDeleteTodo(todo)}
+                    >
+                      Delete
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
